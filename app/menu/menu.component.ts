@@ -3,21 +3,23 @@ import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 
 @Component({
-    selector: 'app-menu',
+  selector: 'app-menu',
     moduleId: module.id,
-    templateUrl: './menu.component.html'
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.css']
 })
+export class MenuComponent implements OnInit {
+  dishes: Dish[];
 
-export class MenuComponent implements OnInit{
-    
-    dishes: Dish[];
-    errMess: string;
+  errMess: string;
 
-    constructor(private dishService: DishService, @Inject('BaseURL') private BaseURL){}
+  constructor(private dishService: DishService,
+    @Inject('BaseURL') private BaseURL) { }
+  
+  ngOnInit() {
+    this.dishService.getDishes()
+    .subscribe(dishes => this.dishes = dishes,
+      errmess => this.errMess = <any>errmess);
+  }
 
-    ngOnInit(){
-        this.dishService.getDishes()
-        .subscribe(dishes => this.dishes = dishes, 
-        errmess => this.errMess = <any>errmess);
-    }
 }

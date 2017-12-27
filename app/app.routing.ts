@@ -3,10 +3,10 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { Routes } from "@angular/router";
 
 
-import { MenuComponent } from "./menu/menu.component";
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "/items", pathMatch: "full" },
+    { path: "", redirectTo: "/menu", pathMatch: "full" },
     { path: "menu", component: MenuComponent }
    
 ];
