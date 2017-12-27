@@ -11,3 +11,12 @@ refer to http://docs.nativescript.org/ui/theme.
 */
 @import 'nativescript-theme-core/css/purple.css';
 
+.border {
+    border-width: 1;
+    border-color: #9F9F9F;
+    border-radius: 5;
+}
+
+.no-boder{
+    border-width: 0;
+}
