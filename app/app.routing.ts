@@ -7,10 +7,12 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { DishdetailComponent } from "./dishdetail/dishdetail.component";
+import { AboutComponent } from "./about/about.component";
 
 const routes: Routes = [
-    { path: "", redirectTo: "/contact", pathMatch: "full" },
+    { path: "", redirectTo: "/about", pathMatch: "full" },
     { path: "home", component: HomeComponent },
+    { path: "about", component: AboutComponent },
     { path: "contact", component: ContactComponent },
     { path: "menu", component: MenuComponent },
     { path: "dishdetail/:id", component: DishdetailComponent}

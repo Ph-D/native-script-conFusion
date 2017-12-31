@@ -7,13 +7,11 @@ import { DrawerPage } from '../shared/drawer/drawer.page';
     templateUrl: './contact.component.html'
 })
 
-export class ContactComponent extends DrawerPage implements OnInit {
+export class ContactComponent extends DrawerPage  {
 
     constructor(private changeDetectorRef: ChangeDetectorRef, 
                 @Inject('BaseURL') private BaseURL){
                     super(changeDetectorRef);
-                }
-    ngOnInit(){
-        
     }
+   
 }
