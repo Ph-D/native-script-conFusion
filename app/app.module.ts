@@ -15,7 +15,7 @@ import { PromotionService } from "./services/promotion.service";
 import { FavoriteService }from "./services/favorite.service";
 import { LeaderService } from "./services/leader.service";
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
-
+import { NativeScriptUIListViewModule } from 'nativescript-telerik-ui/listview/angular';
 import { baseURL } from './shared/baseurl';
 import { DrawerComponent } from "./shared/drawer/drawer.component";
 
@@ -36,7 +36,8 @@ import { DrawerComponent } from "./shared/drawer/drawer.component";
         NativeScriptUISideDrawerModule,
         TNSFontIconModule.forRoot({
             'fa': './fonts/font-awesome.min.css'
-        })
+        }),
+        NativeScriptUIListViewModule
     ],
     declarations: [
         AppComponent,
