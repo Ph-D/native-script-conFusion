@@ -12,6 +12,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import { DishService } from "./services/dish.service";
 import { PromotionService } from "./services/promotion.service";
+import { FavoriteService }from "./services/favorite.service";
 import { LeaderService } from "./services/leader.service";
 import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 
@@ -51,6 +52,7 @@ import { DrawerComponent } from "./shared/drawer/drawer.component";
         DishService,
         LeaderService,
         PromotionService,
+        FavoriteService,
         ProcessHTTPMsgService
     ],
     schemas: [
