@@ -8,11 +8,13 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { DishdetailComponent } from "./dishdetail/dishdetail.component";
 import { AboutComponent } from "./about/about.component";
+import { FavoritesComponent } from './favorites/favorites.component';
 
 const routes: Routes = [
     { path: "", redirectTo: "/about", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "about", component: AboutComponent },
+    { path: "favorites", component: FavoritesComponent },
     { path: "contact", component: ContactComponent },
     { path: "menu", component: MenuComponent },
     { path: "dishdetail/:id", component: DishdetailComponent}
