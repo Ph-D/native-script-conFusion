@@ -19,6 +19,10 @@ import { ProcessHTTPMsgService } from "./services/process-httpmsg.service";
 import { NativeScriptUIListViewModule } from 'nativescript-telerik-ui/listview/angular';
 import { baseURL } from './shared/baseurl';
 import { DrawerComponent } from "./shared/drawer/drawer.component";
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReservationComponent } from './reservation/reservation.component';
+
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -38,7 +42,9 @@ import { DrawerComponent } from "./shared/drawer/drawer.component";
         TNSFontIconModule.forRoot({
             'fa': './fonts/font-awesome.min.css'
         }),
-        NativeScriptUIListViewModule
+        NativeScriptUIListViewModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent,
@@ -48,7 +54,8 @@ import { DrawerComponent } from "./shared/drawer/drawer.component";
         AboutComponent,
         DishdetailComponent,
         DrawerComponent,
-        FavoritesComponent
+        FavoritesComponent,
+        ReservationComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
