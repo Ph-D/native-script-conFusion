@@ -22,6 +22,10 @@ import { DrawerComponent } from "./shared/drawer/drawer.component";
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationModalComponent } from './reservationmodal/reservationmodal.component';
+
+
+
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -55,8 +59,10 @@ import { ReservationComponent } from './reservation/reservation.component';
         DishdetailComponent,
         DrawerComponent,
         FavoritesComponent,
-        ReservationComponent
+        ReservationComponent,
+        ReservationModalComponent
     ],
+    entryComponents: [ReservationModalComponent ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
         DishService,

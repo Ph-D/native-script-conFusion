@@ -18,6 +18,49 @@ export class ReservationModalComponent implements OnInit {
     constructor(private params: ModalDialogParams,
         private page: Page) {
 
-            if(params.context === "guest")
+            if(params.context === "guest") {
+                this.isDateTime = false;
+            }
+            else if(params.context === "date-time"){
+                this.isDateTime = true;
+            }
         }
+
+    ngOnInit(){
+        if( this.isDateTime){
+            let datePicker: DatePicker = <DatePicker>this.page.getViewById<DatePicker>('datePicker');
+
+            let currentDate : Date = new Date();
+            datePicker.year = currentDate.getFullYear();
+            datePicker.month = currentDate.getMonth();
+            datePicker.day = currentDate.getDate();
+            datePicker.minDate = currentDate;
+            datePicker.maxDate = new Date(2045, 4, 12);
+
+            let timePicker: TimePicker = <TimePicker>this.page.getViewById<TimePicker>('timePicker');
+            timePicker.hour = currentDate.getHours();
+            timePicker.minute = currentDate.getMinutes();
+
+        }
+    }
+
+    public submit(){
+        if(this.isDateTime){
+            let datePicker: DatePicker = <DatePicker>this.page.getViewById<DatePicker>('datePicker');
+            let selectedDate = datePicker.date; 
+            let timePicker: TimePicker = <TimePicker>this.page.getViewById<TimePicker>('timePicker');
+            let selectedTime = timePicker.time;
+            let reserveTime = new Date(selectedDate.getFullYear(),
+                                       selectedDate.getMonth(),
+                                       selectedTime.getHours(),
+                                       selectedTime.getMinutes())
+            
+            this.params.closeCallback(reserveTime.toISOString());
+
+        }
+        else{
+            let picker = <ListPicker> this.page.getViewById<ListPicker>('guestPicker');
+            this.params.closeCallback(this.guestArray[picker.selectedIndex])
+        }
+    }
 }
