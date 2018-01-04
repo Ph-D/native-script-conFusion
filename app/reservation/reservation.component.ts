@@ -42,6 +42,9 @@ export class ReservationComponent extends DrawerPage implements OnInit {
         }
     }
 
+
+    
+
     onGuestChange(args) {
         let textField = <TextField>args.object;
 
@@ -75,4 +78,10 @@ export class ReservationComponent extends DrawerPage implements OnInit {
     onSubmit() {
         console.log(JSON.stringify(this.reservation.value));
     }
+
+
+
+
+
+    
 }
