@@ -9,6 +9,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Toasty } from 'nativescript-toasty';
 import { action } from "ui/dialogs";
+import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/modal-dialog';
 
 @Component({
   selector: 'app-dishdetail',
@@ -69,17 +70,25 @@ export class DishdetailComponent implements OnInit {
   };
   
   action(options).then((result) => {
-    
     if(result == "Add to Favorites"){
         this.addToFavorites();
-  }else if(result == "Add Comment"){
+    }else if(result == "Add Comment"){
         console.log('add a comment');
-  }
-
-
+    }
+ 
   });
 
-
   }
+
+
+  createModalView(args){
+    let options: ModalDialogOptions = {
+        
+        context: args,
+        fullscreen: false
+    };
+
+
+
 
 }
