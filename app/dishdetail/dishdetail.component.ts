@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewContainerRef } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { Comment } from '../shared/comment';
 import { DishService } from '../services/dish.service';
@@ -10,6 +10,8 @@ import 'rxjs/add/operator/switchMap';
 import { Toasty } from 'nativescript-toasty';
 import { action } from "ui/dialogs";
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/modal-dialog';
+import { CommentComponent } from '../comment/comment.component';
+
 
 @Component({
   selector: 'app-dishdetail',
@@ -24,11 +26,14 @@ export class DishdetailComponent implements OnInit {
   avgstars: string;
   numcomments: number;
   favorite: boolean = false;
+  dishcopy = null;
 
   constructor(private dishservice: DishService,
     private favoriteService: FavoriteService,
     private fontIcon: TNSFontIconService,
     private route: ActivatedRoute,
+    private vcRef: ViewContainerRef,
+    private _modalService: ModalDialogService,
     private routerExtensions: RouterExtensions,
     @Inject('BaseURL') private BaseURL) { }
 
@@ -61,34 +66,38 @@ export class DishdetailComponent implements OnInit {
     this.routerExtensions.back();
   }
 
-
-  displayActionDialog(){
-    let options = {
-      title: "Actions",
-      cancelButtonText: "Cancel",
-      actions: ["Add to Favorites", "Add Comment"]
-  };
-  
-  action(options).then((result) => {
-    if(result == "Add to Favorites"){
-        this.addToFavorites();
-    }else if(result == "Add Comment"){
-        console.log('add a comment');
-    }
- 
-  });
-
-  }
-
-
   createModalView(args){
     let options: ModalDialogOptions = {
-        
+        viewContainerRef: this.vcRef,
         context: args,
         fullscreen: false
     };
 
+    this._modalService.showModal(CommentComponent, options).then(
+      (data: any) => { 
+        return this.dish.comments.push(data);
+    }
+  );
+}
+
+    displayActionDialog(){
+      let options = {
+        title: "Actions",
+        cancelButtonText: "Cancel",
+        actions: ["Add to Favorites", "Add Comment"]
+    };
+  
+    action(options).then((result) => {
+      if(result == "Add to Favorites"){
+          this.addToFavorites();
+      }else if(result == "Add Comment"){
+        this.createModalView('comment')
+      }
+    });
+
+  }
 
 
+ 
 
 }

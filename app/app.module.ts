@@ -23,6 +23,7 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationModalComponent } from './reservationmodal/reservationmodal.component';
+import { CommentComponent } from './comment/comment.component';
 
 
 
@@ -60,9 +61,10 @@ import { ReservationModalComponent } from './reservationmodal/reservationmodal.c
         DrawerComponent,
         FavoritesComponent,
         ReservationComponent,
-        ReservationModalComponent
+        ReservationModalComponent,
+        CommentComponent
     ],
-    entryComponents: [ReservationModalComponent ],
+    entryComponents: [ReservationModalComponent,CommentComponent ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
         DishService,
