@@ -3,16 +3,14 @@
             <Label class="h3 m-15" row="0" col="0" text="Your Name" textWrap="true"></Label>
             <TextField class="input input-border" 
                 hint="Your Name" [text]=''
-                (textChange)="onAuthorChange($event)"
                 row="0" col="1" formControlName="author"></TextField>
             <Label class="h3 m-15" row="1" col="0" text="Rating" textWrap="true"></Label>
-            <Slider row="1" col="1" (valueChange)="onSliderValueChange($event)" formControlName="rating" minValue="0" maxValue="5"></Slider>
+            <Slider row="1" col="1" formControlName="rating" minValue="0" maxValue="5"></Slider>
             <Label class="h3 m-15" row="2" col="0" text="Your Comment" textWrap="true"></Label>
             <TextField class="input input-border" 
                 hint="Your Comment" [text]=''
-                (textChange)="onCommentChange($event)"
                 row="2" col="1" formControlName="comment"></TextField>
             <Button class="btn btn-primary btn-active m-15" row="3" col="0"
-                text="Submit" (tap)="onSubmit()" [disabled]="!commentForm.valid"></Button>
+                text="Submit" (tap)="onSubmit()"s></Button>
         </GridLayout>
 </StackLayout>

@@ -29,25 +29,6 @@ export class CommentComponent implements OnInit{
 
     }
 
-    onAuthorChange(args) {
-        let textField = <TextField>args.object;
-
-        this.commentForm.patchValue({ author: textField.text});
-    }
-
-    onCommentChange(args) {
-        let textField = <TextField>args.object;
-
-        this.commentForm.patchValue({ comment: textField.text});
-    }
-
-    onSliderValueChange(args) {
-        let slider = <Slider>args.object;
-
-        this.currentValue = slider.value;
-    }
-
-
     onSubmit() {
         this.params.closeCallback(this.commentForm.value);
     }
