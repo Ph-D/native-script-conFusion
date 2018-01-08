@@ -75,7 +75,9 @@ export class DishdetailComponent implements OnInit {
 
     this._modalService.showModal(CommentComponent, options).then(
       (data: any) => { 
-        return this.dish.comments.push(data);
+        if(data){
+          return this.dish.comments.push(data);
+        }
     }
   );
 }

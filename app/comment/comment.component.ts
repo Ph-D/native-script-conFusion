@@ -12,9 +12,7 @@ import { ModalDialogParams } from 'nativescript-angular/modal-dialog';
 export class CommentComponent implements OnInit{
 
     commentForm: FormGroup;
-    currentValue: number = 10;
-
-
+    
     constructor(private formBuilder: FormBuilder,private params: ModalDialogParams){
 
         this.commentForm = this.formBuilder.group({
