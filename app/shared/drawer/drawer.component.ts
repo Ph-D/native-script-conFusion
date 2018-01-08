@@ -12,5 +12,25 @@ import { getString, setString } from 'application-settings';
 export class DrawerComponent {
     constructor(private fonticon: TNSFontIconService){
         
+        }
+
+        displayLoginDialog() {
+            let options = {
+                title: 'Login',
+                message: 'Type Your Login Credentials',
+                userName: getString("userName", ""),
+                password: getString("password",""),
+                okButtonText: "Ok",
+                cancelButtonText: "Cancel"
+            }
+
+            login(options)
+                .then((loginResult: LoginResult) => {
+                    setString("userName", loginResult.userName);
+                    setString("password", loginResult.password);
+                },
+            () => { console.log('Login cancelled');
+        });
+
     }
 }
