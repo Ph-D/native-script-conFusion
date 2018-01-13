@@ -6,7 +6,7 @@
                 <drawer-content></drawer-content>
             </StackLayout>
         </ScrollView>
-        <ScrollView orientation="vertical" tkMainContent class="page">
+        <ScrollView orientation="vertical" tkMainContent class="page" *ngIf="!afterSubmission">
             <GridLayout class="m-5" rows="auto auto auto auto" columns="*, *" [formGroup]="reservation">
                 <Label class="h3 m-15" row="0" col="0" text="No. of Guests" textWrap="true"></Label>
                 <TextField class="input input-border" id="textGuests"

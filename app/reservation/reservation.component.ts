@@ -14,6 +14,7 @@ import { ReservationModalComponent } from '../reservationmodal/reservationmodal.
 export class ReservationComponent extends DrawerPage implements OnInit {
 
     reservation: FormGroup;
+    afterSubmission = false;
 
     constructor(private changeDetectorRef: ChangeDetectorRef,
         private _modalService: ModalDialogService,
@@ -77,6 +78,7 @@ export class ReservationComponent extends DrawerPage implements OnInit {
 
     onSubmit() {
         console.log(JSON.stringify(this.reservation.value));
+        this.afterSubmission = true;
     }
 
 

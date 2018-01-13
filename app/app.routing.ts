@@ -12,7 +12,7 @@ import { AboutComponent } from "./about/about.component";
 import { FavoritesComponent } from './favorites/favorites.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "menu", pathMatch: "full" },
+    { path: "", redirectTo: "reservation", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "about", component: AboutComponent },
     { path: "favorites", component: FavoritesComponent },
