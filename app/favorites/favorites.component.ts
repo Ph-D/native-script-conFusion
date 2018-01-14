@@ -91,7 +91,6 @@ export class FavoritesComponent extends DrawerPage implements OnInit {
         }
 
 
-
         // public onSwipeCellStarted(args: ListViewEventData) {
 
         //     var swipeLimits = args.data.swipeLimits;
@@ -103,8 +102,6 @@ export class FavoritesComponent extends DrawerPage implements OnInit {
         //     swipeLimits.right = args['mainView'].getMeasuredWidth() * 0.2;
             
         //     }
-
-
 
 
     public onSwipeCellFinished(args: ListViewEventData) {
