@@ -129,6 +129,12 @@ export class ReservationComponent extends DrawerPage implements OnInit {
             })
                 .then(() => {
                     this.afterSubmission = true;
+                    this.cardResume.animate({
+                        scale: { x: 1, y: 1 },
+                        opacity: 1,
+                        duration: 500,
+                        curve: enums.AnimationCurve.easeIn
+                    })
                   });
               });
             });
@@ -136,7 +142,7 @@ export class ReservationComponent extends DrawerPage implements OnInit {
           else if( this.afterSubmission ) {
             this.cardResume.animate({
                 scale: { x: 1, y: 1 },
-                opacity: 0,
+                opacity: 1,
                 duration: 500,
                 curve: enums.AnimationCurve.easeIn
             })
