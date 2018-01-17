@@ -26,7 +26,7 @@ import { ReservationModalComponent } from './reservationmodal/reservationmodal.c
 import { CommentComponent } from './comment/comment.component';
 import { CouchbaseService } from './services/couchbase.service';
 import { UserAuthComponent } from './userauth/userauth.component';
-
+import { PlatformService } from './services/platform.services';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -73,7 +73,8 @@ import { UserAuthComponent } from './userauth/userauth.component';
         PromotionService,
         FavoriteService,
         ProcessHTTPMsgService,
-        CouchbaseService
+        CouchbaseService,
+        PlatformService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
